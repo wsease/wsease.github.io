@@ -7,3 +7,4 @@ This is still far from complete but whatever.
 <3
 
 Testing my git skills
+Git Bash line to start ssh agent - eval "$(ssh-agent -s)"
