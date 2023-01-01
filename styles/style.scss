@@ -111,6 +111,11 @@ section {
     transform: translateY(0) scale(1);
 }
 
+.sec6 {
+    display: none;
+    transform: translateY(0) scale(1);
+}
+
 .active {
     display: block;
     animation: scaleAnim 1s ease-in-out;
@@ -130,7 +135,7 @@ section {
     position: fixed;
     z-index: 10;
     top: 3rem;
-    right: 10%;
+    right: 1rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -312,10 +317,10 @@ section {
             img {
                 object-fit: contain;
                 transition: var(--default-transition);
-                filter: grayscale(100%);
-                &:hover {
-                    filter: grayscale(0);
-                }
+                // filter: grayscale(100%);
+                // &:hover {
+                //     filter: grayscale(0);
+                // }
             }
         }
     }
@@ -339,7 +344,7 @@ section {
 }
 
 .about-stats {
-    padding-bottom: 2rem;
+    padding: 3rem 0;
     .progress-bars {
         gap: 2rem;
         .progress-bar {
@@ -353,11 +358,17 @@ section {
                 }
                 .progress-bar-title {
                     text-transform: uppercase;
-                    font-weight: 500;
+                    font-weight: 600;
+                    font-size: 1.3rem;
                     color: var(--color-grey-4);
                     padding-left: 1rem;
                     padding-top: 6px;
                     padding-bottom: 5px;
+            span {
+                color: var(--color-grey-2);
+                font-weight: 500;
+                font-size: 1.2rem;
+            }
                 }
                 .progress {
                     width: 100%;
