@@ -288,7 +288,7 @@ section {
   margin-bottom: 1.5rem;
   line-height: 2rem;
   font-size: 1.2rem;
-  padding-right: 1rem;
+  padding-right: 10rem;
 }
 
 .about-container {
@@ -304,9 +304,6 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -935,5 +932,73 @@ section {
   font-size: 5rem;
   overflow: hidden;
   white-space: nowrap;
+}
+
+@media screen and (max-width: 1350px) {
+  header {
+    padding: 0;
+  }
+  .section {
+    padding: 4rem 2.5rem !important;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .controls {
+    top: auto;
+    bottom: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 100%;
+    background-color: var(--color-grey-5);
+  }
+  .controls .control {
+    margin: 1rem 2%;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+  }
+  .controls .control .btn-text {
+    display: none;
+  }
+  .main-title h2 {
+    font-size: 3.5rem;
+  }
+  .main-title .bg-text {
+    display: none;
+  }
+  .section {
+    padding: 1rem 2.5rem !important;
+  }
+  header .right-header {
+    padding: 0 !important;
+  }
+  header .right-header .p {
+    padding-right: 1rem;
+  }
+  .about-container {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+  .about-container .right-about {
+    padding-top: 3rem;
+    height: 50vh;
+    width: 50vw;
+    margin: auto;
+  }
+  .about-container .left-about {
+    padding: 0;
+  }
+  .about-container .left-about h4 {
+    font-size: 1.7rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
