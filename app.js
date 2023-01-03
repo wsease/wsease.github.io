@@ -4,6 +4,24 @@ const sectBtn = document.querySelectorAll('.control');
 const allSections = document.querySelector('.main-content');
 //const allSections = document.querySelector('.main-content:not(.btn-con)');
 
+
+var i = 0;
+var txt = '      William Sease.'; /* The text */
+var speed = 175; /* The speed/duration of the effect in milliseconds */
+TypeWriter();
+
+function TypeWriter() {
+    if (i < txt.length) {
+        document.getElementById("totype").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(TypeWriter, speed);
+    }
+}
+// Ripped from https://www.w3schools.com/howto/howto_js_typewriter.asp
+
+
+
+
 function PageTransition() {
     //Button click active class
     for (let i = 0; i < sectBtn.length; i++) {
@@ -49,6 +67,13 @@ function PageTransition() {
 
 PageTransition();
 // Ripped from https://www.youtube.com/watch?v=xV7S8BhIeBo&ab_channel=freeCodeCamp.org
+
+
+
+
+
+
+
 
 
 
