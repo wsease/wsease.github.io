@@ -84,8 +84,6 @@ section {
 .section {
   -webkit-transform: translateY(-100%) scale(0);
           transform: translateY(-100%) scale(0);
-  -webkit-transition: all .4 ease-in-out;
-  transition: all .4 ease-in-out;
   -webkit-transition: var(--default-transition);
   transition: var(--default-transition);
   background-color: var(--color-primary);
@@ -259,55 +257,6 @@ section {
   min-height: 100vh;
 }
 
-.header-content .left-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
-}
-
-.header-content .left-header .h-shape {
-  -webkit-transition: var(--default-transition);
-  transition: var(--default-transition);
-  width: 65%;
-  height: 100%;
-  background-color: var(--color-secondary);
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  -webkit-clip-path: polygon(70% 0, 50% 50%, 70% 100%, 0 100%, 0 0);
-          clip-path: polygon(70% 0, 50% 50%, 70% 100%, 0 100%, 0 0);
-}
-
-.header-content .left-header .image {
-  border-radius: var(--br-m-2);
-  height: 100%;
-  width: 100%;
-  background-color: var(--color-black);
-  -webkit-transition: var(--default-transition);
-  transition: var(--default-transition);
-}
-
-.header-content .left-header .image img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-transition: var(--default-transition);
-  transition: var(--default-transition);
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-}
-
-.header-content .left-header .image img:hover {
-  -webkit-filter: grayscale(0);
-          filter: grayscale(0);
-}
-
 .header-content .right-header {
   position: fixed;
   display: -webkit-box;
@@ -419,15 +368,15 @@ section {
   font-weight: 300;
 }
 
-.about-stats {
+.about-skills {
   padding: 3rem 0;
 }
 
-.about-stats .progress-bars {
+.about-skills .progress-bars {
   gap: 2rem;
 }
 
-.about-stats .progress-bars .progress-bar {
+.about-skills .progress-bars .progress-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -439,7 +388,7 @@ section {
   transition: var(--default-transition);
 }
 
-.about-stats .progress-bars .progress-bar:hover {
+.about-skills .progress-bars .progress-bar:hover {
   cursor: default;
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
@@ -447,23 +396,23 @@ section {
           box-shadow: 1px, 4px, 15px, rgba(0, 0, 0, 0.3);
 }
 
-.about-stats .progress-bars .progress-bar:hover .progress-bar-title {
+.about-skills .progress-bars .progress-bar:hover .progress-bar-title {
   color: var(--color-secondary);
 }
 
-.about-stats .progress-bars .progress-bar:hover .progress-container .progress .expert {
+.about-skills .progress-bars .progress-bar:hover .progress-container .progress .expert {
   width: 100%;
 }
 
-.about-stats .progress-bars .progress-bar:hover .progress-container .progress .advanced {
+.about-skills .progress-bars .progress-bar:hover .progress-container .progress .advanced {
   width: 75%;
 }
 
-.about-stats .progress-bars .progress-bar:hover .progress-container .progress .educated {
+.about-skills .progress-bars .progress-bar:hover .progress-container .progress .educated {
   width: 50%;
 }
 
-.about-stats .progress-bars .progress-bar .progress-container {
+.about-skills .progress-bars .progress-bar .progress-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -472,11 +421,11 @@ section {
           align-items: center;
 }
 
-.about-stats .progress-bars .progress-bar .progress-container .prog-text {
+.about-skills .progress-bars .progress-bar .progress-container .prog-text {
   color: var(--color-grey-2);
 }
 
-.about-stats .progress-bars .progress-bar .progress-container .progress-bar-title {
+.about-skills .progress-bars .progress-bar .progress-container .progress-bar-title {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1.3rem;
@@ -486,13 +435,13 @@ section {
   padding-bottom: 5px;
 }
 
-.about-stats .progress-bars .progress-bar .progress-container .progress-bar-title span {
+.about-skills .progress-bars .progress-bar .progress-container .progress-bar-title span {
   color: var(--color-grey-2);
   font-weight: 500;
   font-size: 1.2rem;
 }
 
-.about-stats .progress-bars .progress-bar .progress-container .progress {
+.about-skills .progress-bars .progress-bar .progress-container .progress {
   width: 100%;
   height: 1rem;
   background-color: var(--color-grey-4);
@@ -502,7 +451,7 @@ section {
   border-radius: 20px;
 }
 
-.about-stats .progress-bars .progress-bar .progress-container .progress span {
+.about-skills .progress-bars .progress-bar .progress-container .progress span {
   position: absolute;
   left: 0;
   top: 0;
@@ -513,19 +462,19 @@ section {
   border-radius: 20px;
 }
 
-.about-stats .progress-bars .progress-bar .progress-container .progress .expert {
+.about-skills .progress-bars .progress-bar .progress-container .progress .expert {
   width: 0%;
 }
 
-.about-stats .progress-bars .progress-bar .progress-container .progress .advanced {
+.about-skills .progress-bars .progress-bar .progress-container .progress .advanced {
   width: 0%;
 }
 
-.about-stats .progress-bars .progress-bar .progress-container .progress .educated {
+.about-skills .progress-bars .progress-bar .progress-container .progress .educated {
   width: 0%;
 }
 
-.about-stats .progress-bars .progress-bar .progress-list {
+.about-skills .progress-bars .progress-bar .progress-list {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
@@ -539,20 +488,10 @@ section {
           align-items: center;
 }
 
-.about-stats .progress-bars .progress-bar .progress-list li {
+.about-skills .progress-bars .progress-bar .progress-list li {
   padding-left: 1rem;
   list-style-type: circle;
   color: var(--color-grey-2);
-}
-
-.stat-title {
-  text-transform: uppercase;
-  font-size: 2rem;
-  text-align: center;
-  position: relative;
-  font-weight: 400;
-  border-top: 2px solid var(--color-grey-5);
-  padding-top: 1rem;
 }
 
 .timeline {
@@ -633,7 +572,7 @@ section {
   color: var(--color-grey-2);
 }
 
-.blogs {
+.projects {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
@@ -642,7 +581,7 @@ section {
   margin-top: 3rem;
 }
 
-.blogs .blog {
+.projects .project {
   position: relative;
   background-color: var(--color-grey-5);
   border-radius: 5px;
@@ -652,7 +591,7 @@ section {
   transition: var(--default-transition);
 }
 
-.blogs .blog:hover {
+.projects .project:hover {
   -webkit-box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
           box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
   -webkit-transform: translateY(-5px);
@@ -661,7 +600,7 @@ section {
   transition: var(--default-transition);
 }
 
-.blogs .blog:hover img {
+.projects .project:hover img {
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
   -webkit-transform: scale(1.1);
@@ -670,23 +609,23 @@ section {
           box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
 }
 
-.blogs .blog:hover .metroid-static {
+.projects .project:hover .metroid-static {
   opacity: 0;
 }
 
-.blogs .blog .metroid-static {
+.projects .project .metroid-static {
   position: absolute;
   background: white;
   z-index: 1;
 }
 
-.blogs .blog .metroid-active {
+.projects .project .metroid-active {
   -o-object-fit: contain;
      object-fit: contain;
   background: white;
 }
 
-.blogs .blog img {
+.projects .project img {
   width: 100%;
   height: 300px;
   -o-object-fit: cover;
@@ -699,13 +638,13 @@ section {
   transition: var(--default-transition);
 }
 
-.blogs .blog .blog-text {
+.projects .project .project-text {
   margin-top: -7px;
   padding: 1.1rem;
   border-top: 8px solid var(--color-secondary);
 }
 
-.blogs .blog .blog-text a {
+.projects .project .project-text a {
   font-size: 1.5rem;
   -webkit-transition: var(--default-transition);
   transition: var(--default-transition);
@@ -713,28 +652,28 @@ section {
   text-decoration: underline;
 }
 
-.blogs .blog .blog-text a:hover {
+.projects .project .project-text a:hover {
   color: var(--color-secondary);
 }
 
-.blogs .blog .blog-text h4 {
+.projects .project .project-text h4 {
   font-size: 1.5rem;
   -webkit-transition: var(--default-transition);
   transition: var(--default-transition);
   text-decoration: underline;
 }
 
-.blogs .blog .blog-text p {
+.projects .project .project-text p {
   color: var(--color-grey-2);
   line-height: 2rem;
   padding-bottom: 1rem;
 }
 
-.blogs .blog ul {
+.projects .project ul {
   padding: 1rem 1rem;
 }
 
-.blogs .blog ul li {
+.projects .project ul li {
   padding-left: .5rem;
   list-style-type: circle;
   color: var(--color-grey-2);

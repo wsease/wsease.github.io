@@ -1,15 +1,19 @@
+// Set variables for page transitions
 const sections = document.querySelectorAll('.section');
 const sectBtns = document.querySelectorAll('.controls');
 const sectBtn = document.querySelectorAll('.control');
 const allSections = document.querySelector('.main-content');
-//const allSections = document.querySelector('.main-content:not(.btn-con)');
 
 
 var i = 0;
-var txt = '      William Sease.'; /* The text */
-var speed = 175; /* The speed/duration of the effect in milliseconds */
+// Text to type, spaces to cause delay before first letter is typed.
+var txt = '      William Sease.';
+// Time to wait between letters
+var speed = 175;
 TypeWriter();
 
+// Finds all elements with id of "totype" and adds a typewriter effect to them.
+// Starts on page load.
 function TypeWriter() {
     if (i < txt.length) {
         document.getElementById("totype").innerHTML += txt.charAt(i);
@@ -21,9 +25,9 @@ function TypeWriter() {
 
 
 
-
+// Function for switching between active pages and buttons.
 function PageTransition() {
-    //Button click active class
+    // Set most recently clicked button to be the active button.
     for (let i = 0; i < sectBtn.length; i++) {
         sectBtn[i].addEventListener('click', function() {
             let currentBtn = document.querySelectorAll('.active-btn')
@@ -32,20 +36,10 @@ function PageTransition() {
         })
     }
 
-    //Sections active class
+    // Determine the active page.
     allSections.addEventListener('click', (e) => {
         const id = e.target.dataset.id;
         if (id) {
-            //Remove selected from the other btns
-            // sectBtns.forEach((btn) => {
-            //     btn.classList.remove('active')
-            // })
-            // const btns = sectBtns[0].children;
-            // for (let btn of btns){
-            //     btn.classList.remove('active')
-            // }
-            // e.target.classList.add('active')
-
             //Hide other sections
             sections.forEach((section) => {
                 section.classList.remove('active')
@@ -56,15 +50,14 @@ function PageTransition() {
         }
     })
 
-    //Toggle theme
+    //Toggle theme, currently obsolete.
     const themeBtn = document.querySelector('.theme-btn');
     themeBtn.addEventListener('click', (e) => {
         let element = document.body;
         element.classList.toggle('light-mode');
     })
-
 }
 
 PageTransition();
-// Ripped from https://www.youtube.com/watch?v=xV7S8BhIeBo&ab_channel=freeCodeCamp.org
+// Page transitions are modified from https://www.youtube.com/watch?v=xV7S8BhIeBo&ab_channel=freeCodeCamp.org
 

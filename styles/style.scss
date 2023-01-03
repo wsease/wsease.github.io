@@ -1,5 +1,6 @@
 @import './media';
 
+// Reset everything.
 *{
     margin: 0;
     padding: 0;
@@ -7,6 +8,7 @@
     list-style: none;
 }
 
+// Variables for colors and transitions
 :root {
     --color-primary: #191d2b;
     --color-secondary: #efa734;
@@ -24,6 +26,7 @@
     --box-shadow-1: 0 3px 15px rgba(0,0,0,.3)
 }
 
+// Variables for light mode, currently obsolete.
 .light-mode {
     --color-primary: #ffffff;
     --color-secondary: #369643;
@@ -64,7 +67,6 @@ header {
         position: relative;
         z-index: -1;
         width: 100vw;
-        // filter: grayscale(100%);
     }
 }
 
@@ -81,11 +83,11 @@ section {
 
 .section {
     transform: translateY(-100%) scale(0);
-    transition: all .4 ease-in-out;
     transition: var(--default-transition);
     background-color: var(--color-primary);
 }
 
+// Turn off all sections
 .sec1 {
     display: none;
     transform: translateY(0) scale(1);
@@ -116,6 +118,7 @@ section {
     transform: translateY(0) scale(1);
 }
 
+// Makes active section the page on top.
 .active {
     display: block;
     animation: scaleAnim 1s ease-in-out;
@@ -130,7 +133,7 @@ section {
     }
 }
 
-//Controls
+// Controls for navigation between sections.
 .controls {
     position: fixed;
     z-index: 10;
@@ -144,7 +147,6 @@ section {
 
     .active-btn {
         background-color: var(--color-secondary) !important;
-        // transition: var(--default-transition);
         i, span {
             color: var(--color-white) !important;
         }
@@ -176,6 +178,7 @@ section {
     }
 }
 
+// Obsolete.
 .theme-btn {
     top: 1.35rem;
     right: 3%;
@@ -200,45 +203,12 @@ section {
     }
 }
 
-//Header content
+
+// Header/home page content
+// * I don't this will play nice with _media.scss, will have to fix.
 .header-content {
     display: block;
-    //grid-template-columns: repeat(2, 1fr);
     min-height: 100vh;
-    .left-header {
-        display: flex;
-        align-items: center;
-        position: relative;
-        .h-shape {
-            transition: var(--default-transition);
-            width: 65%;
-            height: 100%;
-            background-color: var(--color-secondary);
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: -1;
-            clip-path: polygon(70% 0, 50% 50%, 70% 100%, 0 100%, 0 0);
-        }
-        .image {
-            border-radius: var(--br-m-2);
-            height: 100%;
-            width: 100%;
-            // margin-left: 4rem;
-            background-color: var(--color-black);
-            transition: var(--default-transition);
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: var(--default-transition);
-                filter: grayscale(100%);
-                &:hover {
-                    filter: grayscale(0);
-                }
-            }
-        }
-    }
 
     .right-header {
         position: fixed;
@@ -251,7 +221,6 @@ section {
         .name {
             font-size: 4rem;
             font-weight: 300;
-            //text-transform: uppercase;
             span {
                 color: var(--color-secondary);
             }
@@ -266,7 +235,7 @@ section {
     }
 }
 
-//About
+//About section
 .about-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -281,12 +250,10 @@ section {
         .about-img {
             // TODO Add slideshow
             border-radius: var(--br-m-2);
-            //margin-left: 4rem;
             transition: var(--default-transition);
             .slide {
                 object-fit: contain;
                 transition: var(--default-transition);
-                // filter: grayscale(100%);
                 &:hover {
                     transform: translateY(-5px);
                     transform: scale(1.1);
@@ -296,9 +263,12 @@ section {
         }
     }
 
+    // Paragraph on left.
     .left-about{
         padding-right: 5rem;
         transition: var(--default-transition);
+        // Stupid title highlight when hovered.
+        // TODO Either remove this or make hitbox correct size.
         &:hover {
             cursor: default;
             box-shadow: 1px, 4px, 15px, rgba(0, 0, 0, .3);
@@ -322,7 +292,8 @@ section {
     }
 }
 
-.about-stats {
+// Skills sections
+.about-skills {
     padding: 3rem 0;
     .progress-bars {
         gap: 2rem;
@@ -330,6 +301,7 @@ section {
             display: flex;
             flex-direction: column;
             transition: var(--default-transition);
+            // Make progress bar go to assigned value when hovered.
             &:hover {
                 cursor: default;
                 transform: translateY(-5px);
@@ -385,6 +357,7 @@ section {
                         border-radius: 20px;
                     }
 
+                    // Make progress bar go to zero when not hovered.
                     .expert {
                         width: 0%
                     }
@@ -415,17 +388,9 @@ section {
     }
 }
 
-.stat-title {
-    text-transform: uppercase;
-    font-size: 2rem;
-    text-align: center;
-    position: relative;
-    font-weight: 400;
-    border-top: 2px solid var(--color-grey-5);
-    padding-top: 1rem;
-}
 
-//Timeline
+// Work experience section
+// Some pretty finnicky positioning here.
 .timeline {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -445,7 +410,6 @@ section {
         }
         .tl-icon {
             position: absolute;
-            //Might need to be adjusted
             left: -26px;
             top: 0;
             background-color: var(--color-secondary);
@@ -485,13 +449,13 @@ section {
     }
 }
 
-//Blogs
-.blogs {
+// Projects section
+.projects {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 3rem;
-    .blog {
+    .project {
         position: relative;
         background-color: var(--color-grey-5);
         border-radius: 5px;
@@ -528,7 +492,7 @@ section {
             filter: grayscale(100%);
             transition: var(--default-transition);
         }
-        .blog-text {
+        .project-text {
             margin-top: -7px;
             padding: 1.1rem;
             border-top: 8px solid var(--color-secondary);
@@ -563,7 +527,7 @@ section {
     }
 }
 
-//Contact
+// Contact section
 .contact-content-container {
     display: flex;
     padding-top: 3.5rem;
@@ -753,6 +717,6 @@ section {
     border-bottom: 2px solid var(--color-grey-5);
 }
 
-@import './media'
 
-//Ripped from https://www.youtube.com/watch?v=xV7S8BhIeBo&ab_channel=freeCodeCamp.org
+
+// Much of this was modified from https://www.youtube.com/watch?v=xV7S8BhIeBo&ab_channel=freeCodeCamp.org
