@@ -250,6 +250,7 @@ section {
             border-radius: var(--br-m-2);
             transition: var(--default-transition);
             .slide {
+                width: 35vw;
                 object-fit: contain;
                 transition: var(--default-transition);
                 &:hover {
@@ -376,7 +377,7 @@ section {
                 padding-left: 2rem;
                 align-items: center;
                 li {
-                    padding-left: 1rem;
+                    padding: 0 1rem;
                     list-style-type: circle;
                     color: var(--color-grey-2)
                 }

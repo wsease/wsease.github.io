@@ -10,6 +10,7 @@
 }
 
 
+// * Time for buttons to move down and sections really start shifting.
 @media screen and (max-width: 1100px) {
     // Move buttons to bottom on screen.
     .controls{
@@ -56,14 +57,22 @@
         }
     }
 
-    // Change grid to single column.
+    // About container.
     .about-container {
+        // Change grid to single column.
         grid-template-columns: repeat(1, 1fr);
+        // GB pic
         .right-about {
             padding-top: 3rem;
-            height: 50vh;
-            width: 50vw;
-            margin: auto;
+            padding-bottom: 3.5rem;
+            // width: 80vw !important;
+            // height: auto;
+            // margin: auto;
+            .about-img .slide {
+                width: 80vw !important;
+                height: auto;
+                margin: auto;
+            }
         }
         .left-about {
             padding: 0;
@@ -71,5 +80,16 @@
                 font-size: 1.7rem;
             }
         }
+    }
+
+    .about-skills .progress-bars .progress-bar .progress-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+// Move skills list items to single column.
+@media screen and (max-width: 600px) {
+    .about-skills .progress-bars .progress-bar .progress-list {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
