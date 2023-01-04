@@ -7,6 +7,11 @@
     .section {
         padding: 4rem 2.5rem !important;
     }
+
+    // Timeline needs some padding
+    .timeline {
+        padding-left: 1rem;
+    }
 }
 
 
@@ -65,9 +70,6 @@
         .right-about {
             padding-top: 3rem;
             padding-bottom: 3.5rem;
-            // width: 80vw !important;
-            // height: auto;
-            // margin: auto;
             .about-img .slide {
                 width: 80vw !important;
                 height: auto;
@@ -82,13 +84,51 @@
         }
     }
 
+    // Change skills list items to be 2 columns instead of 3.
     .about-skills .progress-bars .progress-bar .progress-list {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    // Change timeline items to be 1 column instead of 3.
+    .timeline {
+        grid-template-columns: repeat(1, 1fr);
+        padding-bottom: 7.5rem;
+    }
+
+    // Change project items to be 2 column instead of 3.
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+        padding-bottom: 7.5rem;
+    }
+
+    // Move contact section up when control banner shifts.
+    .contact-content-container {
+        padding-bottom: 7.5rem;
+    }
 }
 
-// Move skills list items to single column.
+// Move contact section into single column.
+@media screen and (max-width: 900px) {
+    .contact-content-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        .right-contact {
+            margin-left: 0;
+        }
+    }
+}
+
+
+@media screen and (max-width: 750px) {
+    // Move project list items to single column.
+    .projects {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
 @media screen and (max-width: 600px) {
+    // Move skill list items to single column.
     .about-skills .progress-bars .progress-bar .progress-list {
         grid-template-columns: repeat(1, 1fr);
     }

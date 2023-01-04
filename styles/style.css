@@ -942,6 +942,9 @@ section {
   .section {
     padding: 4rem 2.5rem !important;
   }
+  .timeline {
+    padding-left: 1rem;
+  }
 }
 
 @media screen and (max-width: 1100px) {
@@ -1007,6 +1010,38 @@ section {
   .about-skills .progress-bars .progress-bar .progress-list {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
+  }
+  .timeline {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 7.5rem;
+  }
+  .projects {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 7.5rem;
+  }
+  .contact-content-container {
+    padding-bottom: 7.5rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .contact-content-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+  .contact-content-container .right-contact {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .projects {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
   }
 }
 
