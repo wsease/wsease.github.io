@@ -58,14 +58,9 @@ a {
 }
 
 header {
-    height: 100vh;
+    min-height: 100vh;
     color: var(--color-white);
     overflow: hidden;
-    img {
-        position: relative;
-        z-index: -1;
-        width: 100vw;
-    }
 }
 
 section {
@@ -205,21 +200,24 @@ section {
 // Header/home page content
 // * I don't this will play nice with _media.scss, will have to fix.
 .header-content {
-    display: block;
-    min-height: 100vh;
+    transition: var(--default-transition);
+    overflow: hidden;
 
     .right-header {
         position: fixed;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-right: 12rem;
+        padding-right: 5rem;
         left: 50vw;
         top: 25vh;
         .name {
             font-size: 4rem;
             font-weight: 300;
+            transition: var(--default-transition);
+            padding-right: 1rem;
             span {
+                white-space: nowrap;
                 color: var(--color-secondary);
             }
         }
@@ -228,8 +226,14 @@ section {
             margin-bottom: 1.5rem;
             line-height: 2rem;
             font-size: 1.2rem;
-            padding-right: 10rem;
+            padding-right: 35%;
         }
+    }
+    img {
+        position: relative;
+        z-index: -1;
+        width: 100%;
+        overflow: hidden;
     }
 }
 

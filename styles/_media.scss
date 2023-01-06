@@ -1,3 +1,9 @@
+@media screen and (max-height: 700px) {
+    header {
+        overflow: visible;
+    }
+}
+
 @media screen and (max-width: 1350px) {
     // Alter padding from sections and titles
     header {
@@ -6,6 +12,11 @@
 
     .section {
         padding: 4rem 2.5rem !important;
+    }
+
+    // Keep home page background fullscreen
+    .sec1 {
+        padding: 0 0 !important;
     }
 
     // Timeline needs some padding
@@ -39,6 +50,11 @@
         }
     }
 
+    // Decrease padding on home page.
+    .sec1{
+        padding: 0 0 !important;
+    }
+
     // Fix section titles.
     .main-title {
         h2 {
@@ -49,16 +65,18 @@
         }
     }
 
-    .section {
-        padding: 1rem 2.5rem !important;
-    }
-
-    // Decrease padding on home page.
+    // Trying to make header image play nice with scrolling and all that.
     // TODO Needs to be fixed.
-    header .right-header {
-        padding: 0 !important;
-        .p {
-            padding-right: 1rem;
+    .header-content {
+        //overflow: visible;
+        img {
+            position: relative;
+        }
+        .right-header {
+            position: relative;
+            padding-bottom: 7.5rem;
+            left: 5rem;
+            top: 2rem;
         }
     }
 
@@ -109,6 +127,9 @@
 
 // Move contact section into single column.
 @media screen and (max-width: 900px) {
+    .header-content .right-header p {
+        padding-right: 10%;
+    }
     .contact-content-container {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -133,3 +154,11 @@
         grid-template-columns: repeat(1, 1fr);
     }
 }
+
+@media screen and (max-width: 530px) {
+    // Allow space in name again.
+    .header-content .right-header .name span {
+        white-space: normal !important;
+    }
+}
+

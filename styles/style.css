@@ -59,15 +59,9 @@ a {
 }
 
 header {
-  height: 100vh;
+  min-height: 100vh;
   color: var(--color-white);
   overflow: hidden;
-}
-
-header img {
-  position: relative;
-  z-index: -1;
-  width: 100vw;
 }
 
 section {
@@ -253,8 +247,9 @@ section {
 }
 
 .header-content {
-  display: block;
-  min-height: 100vh;
+  -webkit-transition: var(--default-transition);
+  transition: var(--default-transition);
+  overflow: hidden;
 }
 
 .header-content .right-header {
@@ -269,7 +264,7 @@ section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-right: 12rem;
+  padding-right: 5rem;
   left: 50vw;
   top: 25vh;
 }
@@ -277,9 +272,13 @@ section {
 .header-content .right-header .name {
   font-size: 4rem;
   font-weight: 300;
+  -webkit-transition: var(--default-transition);
+  transition: var(--default-transition);
+  padding-right: 1rem;
 }
 
 .header-content .right-header .name span {
+  white-space: nowrap;
   color: var(--color-secondary);
 }
 
@@ -288,7 +287,14 @@ section {
   margin-bottom: 1.5rem;
   line-height: 2rem;
   font-size: 1.2rem;
-  padding-right: 10rem;
+  padding-right: 35%;
+}
+
+.header-content img {
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  overflow: hidden;
 }
 
 .about-container {
@@ -935,12 +941,21 @@ section {
   white-space: nowrap;
 }
 
+@media screen and (max-height: 700px) {
+  header {
+    overflow: visible;
+  }
+}
+
 @media screen and (max-width: 1350px) {
   header {
     padding: 0;
   }
   .section {
     padding: 4rem 2.5rem !important;
+  }
+  .sec1 {
+    padding: 0 0 !important;
   }
   .timeline {
     padding-left: 1rem;
@@ -973,20 +988,23 @@ section {
   .controls .control .btn-text {
     display: none;
   }
+  .sec1 {
+    padding: 0 0 !important;
+  }
   .main-title h2 {
     font-size: 3.5rem;
   }
   .main-title .bg-text {
     display: none;
   }
-  .section {
-    padding: 1rem 2.5rem !important;
+  .header-content img {
+    position: relative;
   }
-  header .right-header {
-    padding: 0 !important;
-  }
-  header .right-header .p {
-    padding-right: 1rem;
+  .header-content .right-header {
+    position: relative;
+    padding-bottom: 7.5rem;
+    left: 5rem;
+    top: 2rem;
   }
   .about-container {
     -ms-grid-columns: (1fr)[1];
@@ -1027,6 +1045,9 @@ section {
 }
 
 @media screen and (max-width: 900px) {
+  .header-content .right-header p {
+    padding-right: 10%;
+  }
   .contact-content-container {
     display: -ms-grid;
     display: grid;
@@ -1049,6 +1070,12 @@ section {
   .about-skills .progress-bars .progress-bar .progress-list {
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .header-content .right-header .name span {
+    white-space: normal !important;
   }
 }
 /*# sourceMappingURL=style.css.map */
