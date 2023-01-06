@@ -59,15 +59,9 @@ a {
 }
 
 header {
-  height: 100vh;
+  min-height: 100vh;
   color: var(--color-white);
   overflow: hidden;
-}
-
-header img {
-  position: relative;
-  z-index: -1;
-  width: 100vw;
 }
 
 section {
@@ -253,8 +247,9 @@ section {
 }
 
 .header-content {
-  display: block;
-  min-height: 100vh;
+  -webkit-transition: var(--default-transition);
+  transition: var(--default-transition);
+  overflow: hidden;
 }
 
 .header-content .right-header {
@@ -269,7 +264,7 @@ section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-right: 12rem;
+  padding-right: 5rem;
   left: 50vw;
   top: 25vh;
 }
@@ -277,9 +272,13 @@ section {
 .header-content .right-header .name {
   font-size: 4rem;
   font-weight: 300;
+  -webkit-transition: var(--default-transition);
+  transition: var(--default-transition);
+  padding-right: 1rem;
 }
 
 .header-content .right-header .name span {
+  white-space: nowrap;
   color: var(--color-secondary);
 }
 
@@ -288,7 +287,14 @@ section {
   margin-bottom: 1.5rem;
   line-height: 2rem;
   font-size: 1.2rem;
-  padding-right: 1rem;
+  padding-right: 35%;
+}
+
+.header-content img {
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  overflow: hidden;
 }
 
 .about-container {
@@ -304,9 +310,6 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -321,6 +324,7 @@ section {
 }
 
 .about-container .right-about .about-img .slide {
+  width: 35vw;
   -o-object-fit: contain;
      object-fit: contain;
   -webkit-transition: var(--default-transition);
@@ -489,7 +493,7 @@ section {
 }
 
 .about-skills .progress-bars .progress-bar .progress-list li {
-  padding-left: 1rem;
+  padding: 0 1rem;
   list-style-type: circle;
   color: var(--color-grey-2);
 }
@@ -935,5 +939,143 @@ section {
   font-size: 5rem;
   overflow: hidden;
   white-space: nowrap;
+}
+
+@media screen and (max-height: 700px) {
+  header {
+    overflow: visible;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  header {
+    padding: 0;
+  }
+  .section {
+    padding: 4rem 2.5rem !important;
+  }
+  .sec1 {
+    padding: 0 0 !important;
+  }
+  .timeline {
+    padding-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .controls {
+    top: auto;
+    bottom: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 100%;
+    background-color: var(--color-grey-5);
+  }
+  .controls .control {
+    margin: 1rem 2%;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+  }
+  .controls .control .btn-text {
+    display: none;
+  }
+  .sec1 {
+    padding: 0 0 !important;
+  }
+  .main-title h2 {
+    font-size: 3.5rem;
+  }
+  .main-title .bg-text {
+    display: none;
+  }
+  .header-content img {
+    position: relative;
+  }
+  .header-content .right-header {
+    position: relative;
+    padding-bottom: 7.5rem;
+    left: 5rem;
+    top: 2rem;
+  }
+  .about-container {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+  .about-container .right-about {
+    padding-top: 3rem;
+    padding-bottom: 3.5rem;
+  }
+  .about-container .right-about .about-img .slide {
+    width: 80vw !important;
+    height: auto;
+    margin: auto;
+  }
+  .about-container .left-about {
+    padding: 0;
+  }
+  .about-container .left-about h4 {
+    font-size: 1.7rem;
+  }
+  .about-skills .progress-bars .progress-bar .progress-list {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .timeline {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 7.5rem;
+  }
+  .projects {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 7.5rem;
+  }
+  .contact-content-container {
+    padding-bottom: 7.5rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .header-content .right-header p {
+    padding-right: 10%;
+  }
+  .contact-content-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+  .contact-content-container .right-contact {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .projects {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-skills .progress-bars .progress-bar .progress-list {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .header-content .right-header .name span {
+    white-space: normal !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,226 +1,164 @@
-// @media screen and (max-width: 600px) {
-//     header{
-//         padding: 0 !important;
-//     }
-//     .theme-btn{
-//         width: 50px;
-//         height: 50px;
-//     }
-//     .header-content{
-//         grid-template-columns: repeat(1, 1fr);
-//         padding-bottom: 6rem;
-//     }
+@media screen and (max-height: 700px) {
+    header {
+        overflow: visible;
+    }
+}
 
-//     .left-header{
-//         .h-shape{
-//             display: none;
-//         }
-//     }
-//     .right-header{
-//         grid-row: 1;
-//         padding-right: 0rem !important;
-//         width: 90%;
-//         margin: 0 auto;
-//         .name{
-//             font-size: 2.5rem !important;
-//             text-align: center;
-//             padding-top: 3rem;
-//         }
-//     }
-//     .header-content .left-header .image{
-//         margin: 0 auto;
-//         width: 90%;
-//     }
+@media screen and (max-width: 1350px) {
+    // Alter padding from sections and titles
+    header {
+        padding: 0;
+    }
 
-//     .controls{
-//         top: auto;
-//         bottom: 0;
-//         flex-direction: row;
-//         justify-content: center;
-//         left: 50%;
-//         transform: translateX(-50%);
-//         width: 100%;
-//         background-color: var(--color-grey-5);
-//         .control{
-//             margin: 1rem .3rem;
-//         }
-//     }
+    .section {
+        padding: 4rem 2.5rem !important;
+    }
 
-//     .about-container {
-//         grid-template-columns: 1fr;
-//         .right-about {
-//             grid-template-columns: 1fr;
-//             padding-top: 2.5rem !important;
-//             padding-bottom: 2.5rem !important;
-//         }
-//         .left-about {
-//             padding: 0;
-//         }
-//     }
+    // Keep home page background fullscreen
+    .sec1 {
+        padding: 0 0 !important;
+    }
 
-//     .about-stats {
-//         .progress-bars {
-//             grid-template-columns: 1fr;
-//         }
-//         .progress-list {
-//             grid-template-columns: 1fr !important;
-//         }
-//     }
+    // Timeline needs some padding
+    .timeline {
+        padding-left: 1rem;
+    }
+}
 
-//     .portfolios {
-//         grid-template-columns: 1fr;
-//         padding-bottom: 6rem;
-//     }
 
-//     .blogs {
-//         grid-template-columns: 1fr !important;
-//         padding-bottom: 6rem;
-//     }
-// }
+// * Time for buttons to move down and sections really start shifting.
+@media screen and (max-width: 1100px) {
+    // Move buttons to bottom on screen.
+    .controls{
+        top: auto;
+        bottom: 0;
+        flex-direction: row;
+        justify-content: center;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        background-color: var(--color-grey-5);
+        .control{
+            margin: 1rem 2%;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            // Remove button text.
+            .btn-text {
+                display: none;
+            }
+        }
+    }
 
-// @media screen and (max-width: 1330px) {
-//     .section {
-//         padding: 5rem 5rem !important;
-//     }
-//     .header {
-//         padding: 0 !important;
-//         .header-content .right-header {
-//             padding: 0 5rem;
-//         }
-//     }
+    // Decrease padding on home page.
+    .sec1{
+        padding: 0 0 !important;
+    }
 
-//     .about-container {
-//         grid-template-columns: 1fr;
-//         padding-bottom: 0 !important;
-//         .right-about {
-//             padding: 0 0;
-//             padding-top: 2rem;
-//             width: 90%;
-//             .about-img {
-//                 margin: 0 auto;
-//             }
-//         }
-//     }
-// }
+    // Fix section titles.
+    .main-title {
+        h2 {
+            font-size: 3.5rem;
+        }
+        .bg-text {
+            display: none;
+        }
+    }
 
-// @media screen and (max-width: 1070px) {
-//     .about-container {
-//         grid-template-columns: 1fr;
-//         .right-about {
-//             padding-top: 2.5rem;
-//         }
-//     }
+    // Trying to make header image play nice with scrolling and all that.
+    // TODO Needs to be fixed.
+    .header-content {
+        //overflow: visible;
+        img {
+            position: relative;
+        }
+        .right-header {
+            position: relative;
+            padding-bottom: 7.5rem;
+            left: 5rem;
+            top: 2rem;
+        }
+    }
 
-//     .portfolios {
-//         grid-template-columns: 1fr 1fr;
-//     }
+    // About container.
+    .about-container {
+        // Change grid to single column.
+        grid-template-columns: repeat(1, 1fr);
+        // GB pic
+        .right-about {
+            padding-top: 3rem;
+            padding-bottom: 3.5rem;
+            .about-img .slide {
+                width: 80vw !important;
+                height: auto;
+                margin: auto;
+            }
+        }
+        .left-about {
+            padding: 0;
+            h4 {
+                font-size: 1.7rem;
+            }
+        }
+    }
 
-//     .blogs {
-//         grid-template-columns: 1fr 1fr;
-//     }
+    // Change skills list items to be 2 columns instead of 3.
+    .about-skills .progress-bars .progress-bar .progress-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-//     .main-title {
-//         h2 {
-//             font-size: 4rem;
-//             span {
-//                 font-size: 4rem;
-//             }
-//         }
-//     }
-// }
+    // Change timeline items to be 1 column instead of 3.
+    .timeline {
+        grid-template-columns: repeat(1, 1fr);
+        padding-bottom: 7.5rem;
+    }
 
-// @media screen and (max-width: 970px) {
-//     .section {
-//         padding: 7rem 6rem;
-//     }
+    // Change project items to be 2 column instead of 3.
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+        padding-bottom: 7.5rem;
+    }
 
-//     header {
-//         padding: 0;
-//     }
+    // Move contact section up when control banner shifts.
+    .contact-content-container {
+        padding-bottom: 7.5rem;
+    }
+}
 
-//     .section {
-//         padding: 2rem 2.5rem !important;
-//     }
+// Move contact section into single column.
+@media screen and (max-width: 900px) {
+    .header-content .right-header p {
+        padding-right: 10%;
+    }
+    .contact-content-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        .right-contact {
+            margin-left: 0;
+        }
+    }
+}
 
-//     .main-title {
-//         .bg-text {
-//             opacity: 0%;
-//         }
-//     }
 
-//     header .right-header {
-//         padding: 0 !important;
-//     }
+@media screen and (max-width: 750px) {
+    // Move project list items to single column.
+    .projects {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
 
-//     .theme-btn {
-//         width: 50px;
-//         height: 50px;
-//     }
 
-//     .header-content {
-//         grid-template-columns: 1fr;
-//         padding-bottom: 6rem;
-//     }
+@media screen and (max-width: 600px) {
+    // Move skill list items to single column.
+    .about-skills .progress-bars .progress-bar .progress-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
 
-//     .left-header {
-//         .h-shape {
-//             display: none;
-//         }
-//     }
+@media screen and (max-width: 530px) {
+    // Allow space in name again.
+    .header-content .right-header .name span {
+        white-space: normal !important;
+    }
+}
 
-//     .right-header {
-//         grid-row: 1;
-//         width: 90%;
-//         margin: 0 auto;
-//         .name {
-//             font-size: 2.5rem !important;
-//         }
-//     }
-
-//     .header-content .left-header .image {
-//         margin: 0 auto;
-//         width: 90%;
-//     }
-    
-//     .timeline {
-//         grid-template-columns: 1fr;
-//         padding-bottom: 6rem;
-//     }
-
-//     .contact-content-container {
-//         flex-direction: column;
-//         .right-contact {
-//             margin-left: 0;
-//             margin-top: 2.5rem;
-//             padding-bottom: 6rem;
-//         }
-//     }
-
-//     .contact-content-container .right-contact .input-control-2 {
-//         flex-direction: column;
-//     }
-//     .contact-content-container .right-contact .input-control-2 :last-child {
-//         margin-left: 0;
-//         margin-top: 1.5rem;
-//     }
-
-//     .controls {
-//         top: auto;
-//         bottom: 0;
-//         flex-direction: row;
-//         justify-content: center;
-//         left: 55%;
-//         transform: translateX(-55%);
-//         width: 110%;
-//         background-color: var(--color-grey-5);
-//         .control {
-//             margin: 1rem .5rem;
-//             width: 55px;
-//             height: 55px;
-//             border-radius: 50%;
-//             span {
-//                 display: none;
-//             }
-//         }
-//     }
-// }
