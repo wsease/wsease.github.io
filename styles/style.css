@@ -346,16 +346,6 @@ section {
   transition: var(--default-transition);
 }
 
-.about-container .left-about:hover {
-  cursor: default;
-  -webkit-box-shadow: 1px, 4px, 15px, rgba(0, 0, 0, 0.3);
-          box-shadow: 1px, 4px, 15px, rgba(0, 0, 0, 0.3);
-}
-
-.about-container .left-about:hover h4 {
-  color: var(--color-secondary);
-}
-
 .about-container .left-about p {
   line-height: 2rem;
   padding-bottom: 1rem;
