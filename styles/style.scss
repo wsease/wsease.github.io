@@ -60,7 +60,6 @@ a {
 header {
     min-height: 100vh;
     color: var(--color-white);
-    overflow: hidden;
 }
 
 section {
@@ -201,6 +200,7 @@ section {
 // * I don't this will play nice with _media.scss, will have to fix.
 .header-content {
     transition: var(--default-transition);
+    max-height: 100vh;
     overflow: hidden;
 
     .right-header {
@@ -232,8 +232,7 @@ section {
     img {
         position: relative;
         z-index: -1;
-        width: 100%;
-        overflow: hidden;
+        max-width: 100%;
     }
 }
 
