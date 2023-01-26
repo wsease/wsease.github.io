@@ -197,7 +197,8 @@ section {
 
 
 // Header/home page content
-// * I don't this will play nice with _media.scss, will have to fix.
+// I don't this will play nice with _media.scss, will have to fix.
+// Fixed Jan26 2023
 .header-content {
     transition: var(--default-transition);
     max-height: 100vh;
