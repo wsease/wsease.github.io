@@ -71,6 +71,10 @@ section {
     padding: 0 10rem;
     padding-top: 5rem;
     padding-bottom: 3rem;
+
+    // Not totally sold on transparent background, looks weird with sliding animation.
+    background-color: #191d2b;
+    background-image: url("https://www.transparenttextures.com/patterns/dark-matter.png");
 }
 
 .section {
