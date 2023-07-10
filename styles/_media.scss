@@ -53,6 +53,9 @@
     // Decrease padding on home page.
     .sec1{
         padding: 0 0 !important;
+        .header-content {
+            max-height: none;
+        }
     }
 
     // Fix section titles.
@@ -66,9 +69,7 @@
     }
 
     // Trying to make header image play nice with scrolling and all that.
-    // TODO Needs to be fixed.
     .header-content {
-        //overflow: visible;
         img {
             position: relative;
         }

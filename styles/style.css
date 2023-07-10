@@ -61,7 +61,6 @@ a {
 header {
   min-height: 100vh;
   color: var(--color-white);
-  overflow: hidden;
 }
 
 section {
@@ -73,6 +72,8 @@ section {
   padding: 0 10rem;
   padding-top: 5rem;
   padding-bottom: 3rem;
+  background-color: #191d2b;
+  background-image: url("https://www.transparenttextures.com/patterns/dark-matter.png");
 }
 
 .section {
@@ -249,6 +250,7 @@ section {
 .header-content {
   -webkit-transition: var(--default-transition);
   transition: var(--default-transition);
+  max-height: 100vh;
   overflow: hidden;
 }
 
@@ -293,8 +295,7 @@ section {
 .header-content img {
   position: relative;
   z-index: -1;
-  width: 100%;
-  overflow: hidden;
+  max-width: 100%;
 }
 
 .about-container {
@@ -980,6 +981,9 @@ section {
   }
   .sec1 {
     padding: 0 0 !important;
+  }
+  .sec1 .header-content {
+    max-height: none;
   }
   .main-title h2 {
     font-size: 3.5rem;
